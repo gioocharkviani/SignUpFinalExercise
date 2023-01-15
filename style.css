@@ -88,15 +88,16 @@ body {
 
 
 .errorBox {
-    color: #748AA1;
-    font-size: 13px;
     padding: 5px;
     border: 1px solid gray;
     margin-top: 10px ;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     border-radius: 3px;
+    color: #748AA1;
+    font-size: 12px;
 }
+
 
 .errorBox::before{
     content: '>';
