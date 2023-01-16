@@ -22,26 +22,56 @@
 
                 <form>
 
-                    <div class="emailBox">
+                    <div class="Box">
                         <label for="email">Email Address</label>
-                        <input id="email" type="text"/>
-
-                        <div class="errorBox">
-                            <span>Example: youremail@email.ge - using GE domain is mandatory</span>
-                        </div>
+                        <input id="email" type="text"/> 
+                        <div class="errorbox"></div>
                     </div>
 
-                    <button>submit</button>
+                    <div class="Box">
+                        <label for="Country">Country</label>
+                        <div class="SelectCountry">
+                            <select  id="SelectCountry" name="Country" >
+                                <option value="" >Select Country</option>
+                                <option value="Georgia">Georgia</option>
+                                <option value="Usa">Usa</option>
+                                <option value="China">China</option>
+                                <option value="Italy">Italy</option>
+                            </select>
+                            <span>change</span>
+                        </div>
+                        <div class="errorbox"></div>
+                    </div>
+
+                    
+                    <div class="boxrow">
+
+                        <div class="RowBox">
+                            <label for="city">city</label>
+                            <input id="city" type="text"/>
+                            <div class="errorbox"></div>
+                        </div>
+                        
+                        <div class="RowBox">
+                            <label for="Zip">Zip Code</label>
+                            <input id="Zip" type="text"/>
+                            <div class="errorbox"></div>
+                        </div>
+
+                    </div>
+
+                    <button id="Signup">Signup now</button>
 
                 </form>
 
             </div>
 
+            <div class="socialBtn">
+                <button class="Fb1">Signup with Facebook</button>
+                <button class="Fb2">Signup with Facebook</button>
+            </div>
+
         </div>
-
-
-    
-      
 
 
     </div>

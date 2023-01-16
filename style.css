@@ -29,6 +29,7 @@ body {
     box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -37,6 +38,7 @@ body {
 .formWrapper {
     font-family: 'Roboto', sans-serif;
     width: 451px;
+    padding: 30px 0 30px 0;
     display: flex;
     flex-direction: column;
 }
@@ -64,20 +66,23 @@ body {
     border-radius: 5px;
 }
 
-.emailBox {
+.Box {
     display: flex;
     flex-direction: column;
+    padding: 10px 0;
+    overflow: hidden;
 }
 
 
-.emailBox label {
+.Box label {
     color: #748AA1;
     font-size: 12px;
     padding: 6px;
 }
 
-.emailBox input {
-    padding: 15px;
+.Box input {
+    padding:10px 15px;
+    font-size: 16px;
     background: #292E33;
     border: 1px solid #33393F;
     border-radius: 5px;
@@ -87,22 +92,132 @@ body {
 }
 
 
-.errorBox {
-    padding: 5px;
-    border: 1px solid gray;
-    margin-top: 10px ;
-    display: flex;
-    justify-content: center;
-    border-radius: 3px;
-    color: #748AA1;
-    font-size: 12px;
+
+
+.errorbox {
+    width: 100%;
+    font-size:12px;
+    padding: 6px;
+    color: red;
 }
 
 
-.errorBox::before{
-    content: '>';
-    color: gray;
-    transform:rotate(-90deg);
-    position:absolute;
-    margin: -16px 20px 0 0;
+#Signup {
+    margin: 30px 0;
+    background: #29CB97;
+    border-radius: 5px;
+    border:none;
+    cursor: pointer;
+    height: 51px;
+    color: #fff;
+    transition: 0.5s;
+}
+
+#Signup:hover {
+    transition: 0.5s;
+    background: linear-gradient(90deg, rgba(39,84,70,1) 0%, rgba(54,124,101,1) 35%, rgba(41,203,151,1) 100%);
+}
+
+
+
+#SelectCountry {
+    padding:10px 15px;
+    font-size: 16px;
+    width: 100%;
+    background: none;
+    border: 1px solid #33393F;
+    border-radius: 5px;
+    color: #fff;
+    outline: none;
+    transition: 0.3s;
+    z-index: 2;
+}
+
+#SelectCountry option {
+    background: #292E33;
+    padding: 10px;
+    border: 0;
+}
+
+.SelectCountry {
+    display: flex;
+    position: relative;
+}
+
+.SelectCountry span {
+    position: absolute;
+    right: 25px;
+    top: 12px;
+    font-size: 14px;
+    color: #748AA1;
+    z-index: 1;
+}
+
+.boxrow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 31px;
+    justify-content:space-between;
+    padding: 0;
+}
+
+
+.RowBox {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.RowBox label {
+    color: #748AA1;
+    font-size: 12px;
+    padding: 6px;
+}
+
+.RowBox input {
+    padding:10px 15px 10px 15px;
+    font-size: 16px;
+    width: 181px;
+    background: #292E33;
+    border: 1px solid #33393F;
+    border-radius: 5px;
+    color: #fff;
+    outline: none;
+}
+
+
+.socialBtn  {
+    font-family: 'Roboto', sans-serif;
+    width: 451px;
+    padding: 30px 0 30px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.socialBtn button {
+    width: 204px;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.Fb1 {
+    background: #255B9B;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
+}
+.Fb1:hover {
+    background: #2670c9;
+    text-decoration: underline;
+}
+
+.Fb2 {
+    background: #00ADEE;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
+}
+.Fb2:hover {
+    background: #186e8d;
+    text-decoration: underline;
 }
