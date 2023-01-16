@@ -6,6 +6,7 @@ const Zip = document.querySelector("#Zip");
 
 UserForm.addEventListener('submit', e => {
   e.preventDefault();
+  Validation() 
 });
 
 
@@ -29,10 +30,11 @@ const setSuccess = element => {
 
 // ============================EROOR ADD AND REMOVE ==============================//
 
-
+// ============================VALIDATION==============================//
+function Validation() {
+    
 // // ============================EMAIL VALIDATION==============================//
 
-function InputEmailValidation(){
 
     EmailInput.addEventListener("keyup", () => {
         let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@+[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(.ge|.ge)$/;
@@ -55,14 +57,11 @@ function InputEmailValidation(){
     
     })
     
-}
 
 // ============================EMAIL VALIDATION==============================//
-InputEmailValidation()
-
 
 // ============================Select VALIDATION==============================//
-function ValidateSelect() {
+
     const SelectCountry = document.querySelector("#SelectCountry");
     SelectCountry.addEventListener("click", () => {    
         if(SelectCountry.value == ""){
@@ -77,12 +76,10 @@ function ValidateSelect() {
     
     })
 
-}
+
 // ============================Select VALIDATION==============================//
-ValidateSelect()
 
 // ============================CITY VALIDATION==============================//
-function CityValidation() {
     City.addEventListener("keyup", () => {
         let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]$/;
         let trimfunction = City.value.trim(); 
@@ -98,12 +95,10 @@ function CityValidation() {
         }
     
     })
-}
+
 // ============================CITY VALIDATION==============================//
-CityValidation() 
 
 // ============================ZIPCODE VALIDATION==============================//
-function ZIPCODEValidation() {
     Zip.addEventListener("keyup", () => {
         let validNumberRegex = /^[0-9]+$/;
         let trimfunction = Zip.value.trim(); 
@@ -115,7 +110,7 @@ function ZIPCODEValidation() {
         }  
         else if(!(trimfunction.match(validNumberRegex))){
             Zip.style = 'border:1px solid red;'
-            setError(Zip, 'Zip Code is just Numbers');
+            setError(Zip, 'Zip Code includs just Numbers');
             return false;
         }
         else{
@@ -125,7 +120,9 @@ function ZIPCODEValidation() {
         }
     
     })
-}
 // ============================ZIPCODE VALIDATION==============================//
 
-ZIPCODEValidation()
+}
+// ============================VALIDATION==============================//
+
+Validation() 
