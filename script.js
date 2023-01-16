@@ -1,11 +1,11 @@
-const UserForm = document.querySelector('form');
+const UserForm = document.querySelector('#form');
 const EmailInput = document.querySelector("#email");
 const Selectbox = document.querySelector(".SelectCountry");
 const City = document.querySelector("#city");
 const Zip = document.querySelector("#Zip");
 
 UserForm.addEventListener('submit', e => {
-  e.preventDefault();
+  e.preventDefault()
   Validation() 
 });
 
@@ -31,7 +31,7 @@ const setSuccess = element => {
 // ============================EROOR ADD AND REMOVE ==============================//
 
 // ============================VALIDATION==============================//
-function Validation() {
+function Validation(){
     
 // // ============================EMAIL VALIDATION==============================//
 
@@ -41,7 +41,7 @@ function Validation() {
         let trimfunction = EmailInput.value.trim(); 
 
         if(EmailInput.value === ""){
-            setError(EmailInput, 'ZIP CODE is required');
+            setError(EmailInput, 'Email is required');
             return false;
         }
         else if(!(trimfunction.toLowerCase().match(validRegex))){
@@ -105,7 +105,7 @@ function Validation() {
 
         if(Zip.value === ""){
             Zip.style = 'border:1px solid red;'
-            setError(Zip, 'City is required');
+            setError(Zip, 'Zip is required');
             return false;
         }  
         else if(!(trimfunction.match(validNumberRegex))){
