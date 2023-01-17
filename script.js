@@ -5,9 +5,11 @@ const City = document.querySelector("#city");
 const Zip = document.querySelector("#Zip");
 
 
+
 UserForm.addEventListener('submit', e => {
   e.preventDefault()
   Validation();
+
 });
 
 
@@ -134,12 +136,15 @@ const ZipValid = () =>{
 // ============================ZIPCODE VALIDATION==============================//
 
 
-if (ZipValid() && CityValid() && selcectValid() && EmailValid()  === true) {
-    
-}else{
-    return false
+// ============================If Form is validable==============================//
+const allvalidInpit = () =>{
+    if (ZipValid() && CityValid() && selcectValid() && EmailValid()  === true) {
+        console.log('true')
+    }else{
+        console.log('false');
+    }
 }
-
+allvalidInpit();
 
 }
-// ============================END VALIDATION==============================//
+// ============================If Form is validable==============================//
