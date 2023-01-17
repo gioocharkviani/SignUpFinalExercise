@@ -4,13 +4,11 @@ const Selectbox = document.querySelector(".SelectCountry");
 const City = document.querySelector("#city");
 const Zip = document.querySelector("#Zip");
 
+
 UserForm.addEventListener('submit', e => {
   e.preventDefault()
-  Validation() 
+  Validation();
 });
-
-
-
 
 
 // ============================EROOR ADD AND REMOVE ==============================//
@@ -35,94 +33,113 @@ function Validation(){
     
 // // ============================EMAIL VALIDATION==============================//
 
-
-    EmailInput.addEventListener("keyup", () => {
+    const EmailValid = () => {
         let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@+[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(.ge|.ge)$/;
         let trimfunction = EmailInput.value.trim(); 
 
         if(EmailInput.value === ""){
             setError(EmailInput, 'Email is required');
-            return false;
+            EmailInput.style = 'border:1px solid red;'
         }
         else if(!(trimfunction.toLowerCase().match(validRegex))){
             EmailInput.style = 'border:1px solid red;'
             setError(EmailInput, 'Example : youremail@domain.ge - ge domain is mandatory');
-            return false;
         }
         else{
             EmailInput.style = 'border:1px solid green;' 
             setSuccess(EmailInput);
             return true;
         }
-    
+    }
+
+
+
+    EmailInput.addEventListener("keyup", () => {
+        EmailValid();
     })
-    
+        EmailValid();
 
 // ============================EMAIL VALIDATION==============================//
 
 // ============================Select VALIDATION==============================//
 
     const SelectCountry = document.querySelector("#SelectCountry");
-    SelectCountry.addEventListener("click", () => {    
+    
+    const selcectValid = () =>{
         if(SelectCountry.value == ""){
             setError(Selectbox, 'Select is required');
             SelectCountry.style = 'border:1px solid red;'
-            return false;
         }else{
             SelectCountry.style = 'border:1px solid green;' 
             setSuccess(Selectbox);
             return true;
         }
-    
+    }
+
+    SelectCountry.addEventListener("click", () => {    
+        selcectValid();
     })
 
+    selcectValid();
+    
 
 // ============================Select VALIDATION==============================//
 
 // ============================CITY VALIDATION==============================//
-    City.addEventListener("keyup", () => {
-        let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]$/;
-        let trimfunction = City.value.trim(); 
-
+    const CityValid = () =>{
         if(City.value === ""){
             City.style = 'border:1px solid red;'
             setError(City, 'City is required');
-            return false;
         }else{
             City.style = 'border:1px solid green;' 
             setSuccess(City);
             return true;
         }
     
+    }
+
+    City.addEventListener("keyup", () => {
+        CityValid();
     })
+
+    CityValid();
 
 // ============================CITY VALIDATION==============================//
 
 // ============================ZIPCODE VALIDATION==============================//
-    Zip.addEventListener("keyup", () => {
-        let validNumberRegex = /^[0-9]+$/;
+const ZipValid = () =>{
+    let validNumberRegex = /^[0-9]+$/;
         let trimfunction = Zip.value.trim(); 
 
         if(Zip.value === ""){
             Zip.style = 'border:1px solid red;'
             setError(Zip, 'Zip is required');
-            return false;
         }  
         else if(!(trimfunction.match(validNumberRegex))){
             Zip.style = 'border:1px solid red;'
             setError(Zip, 'Zip Code includs just Numbers');
-            return false;
         }
         else{
             Zip.style = 'border:1px solid green;' 
             setSuccess(Zip);
             return true;
         }
-    
+}
+
+    Zip.addEventListener("keyup", () => {
+        ZipValid();
     })
+
+    ZipValid();
 // ============================ZIPCODE VALIDATION==============================//
 
-}
-// ============================VALIDATION==============================//
 
-Validation() 
+if (ZipValid() && CityValid() && selcectValid() && EmailValid()  === true) {
+    
+}else{
+    return false
+}
+
+
+}
+// ============================END VALIDATION==============================//
