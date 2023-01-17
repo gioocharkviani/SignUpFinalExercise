@@ -137,11 +137,19 @@ const ZipValid = () =>{
 
 
 // ============================If Form is validable==============================//
+
+const logValues = {
+    email: EmailInput.value , 
+    Country: SelectCountry.value ,
+    city: City.value , 
+    zip : Zip.value
+}
+
 const allvalidInpit = () =>{
     if (ZipValid() && CityValid() && selcectValid() && EmailValid()  === true) {
-        console.log('true')
+        console.log(logValues);
     }else{
-        console.log('false');
+        return false;
     }
 }
 allvalidInpit();

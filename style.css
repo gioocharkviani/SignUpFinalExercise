@@ -222,3 +222,46 @@ body {
     text-decoration: underline;
 }
 
+@media screen and (max-device-width: 780px)  { 
+    .BoxWrapper {
+        padding: 0;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-device-width: 668px)  { 
+    .SignUp {
+        width: 100%;
+    }
+}
+
+@media screen and (max-device-width: 484px)  { 
+    .formWrapper {
+        width: 100%;
+        padding: 0;
+    }
+
+    .boxrow {
+        flex-direction: column;
+        gap:0;
+    }
+
+    .RowBox input {
+        width: 100%;
+    }
+
+    .formWrapper header {
+      padding: 10px;
+    }
+
+    .socialBtn button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .socialBtn {
+        width: 100%;
+        flex-direction: column;
+        padding: 15px;
+    }
+
+}
