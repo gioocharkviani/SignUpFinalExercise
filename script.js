@@ -69,7 +69,7 @@ function Validation(){
     
     const selcectValid = () =>{
         if(SelectCountry.value == ""){
-            setError(Selectbox, 'Select is required');
+            setError(Selectbox, 'Country is required');
             SelectCountry.style = 'border:1px solid red;'
         }else{
             SelectCountry.style = 'border:1px solid green;' 
@@ -155,4 +155,6 @@ const allvalidInpit = () =>{
 allvalidInpit();
 
 }
+
+
 // ============================If Form is validable==============================//
